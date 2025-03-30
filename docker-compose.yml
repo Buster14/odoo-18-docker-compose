@@ -10,7 +10,9 @@ services:
     restart: always             # run as a service
     volumes:
         - ./postgresql:/mnt/postgresql
-
+        - /etc/timezone:/etc/timezone:ro
+        - /etc/localtime:/etc/localtime:ro
+        
   odoo18:
     image: odoo:18.0-20241125
     user: root
